@@ -1,0 +1,26 @@
+[
+    {
+        "id":0,
+        "label":"Agra"
+    },
+    {
+        "id":1,
+        "label":"Banglore"
+    },
+    {
+        "id":2,
+        "label":"Chennai"
+    },
+    {
+        "id":3,
+        "label":"Delhi"
+    },
+    {
+        "id":4,
+        "label":"East-Delhi"
+    },
+    {
+        "id":5,
+        "label":"Faridabad"
+    }
+]

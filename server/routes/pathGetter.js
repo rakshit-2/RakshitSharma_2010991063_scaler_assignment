@@ -1,13 +1,11 @@
 const express = require("express");
-const TEST = require("./models/Test");
-const Logger=require('./connect/logg');
-const router = express.Router();
+const Logger=require('./../connect/logg');
+const pathGetter = express.Router();
 const { spawn } = require('child_process');
 
-router.get("/test", async (req, res) => {
-    var start=req.query.start;
-    var dest=req.query.dest;
-    console.log(start,dest)
+pathGetter.post("/fetch-shortest-path", async (req, res) => {
+    var start=req.body.start;
+    var dest=req.body.dest;
     let data1;
     const check= spawn('python',['ShortestPath.py',start,dest]);
     check.stderr.on('data',(data) => 
@@ -25,4 +23,5 @@ router.get("/test", async (req, res) => {
 })
 
 
-module.exports = router
+module.exports = pathGetter
+

@@ -3,7 +3,8 @@ const express = require("express")
 const bodyParser = require("body-parser")
 const cors = require("cors")
 const db_elements = require("./connect/getENV")
-const routes = require("./routes")
+const landingTest = require("./routes/landingTest")
+const pathGetter = require("./routes/pathGetter")
 const logger_all = require("./connect/logg")
 
 
@@ -19,7 +20,8 @@ mongoose.connect(db_elements.db_url,
 
 }).then(()=>
 {
-    app.use("/api", routes)
+    app.use("/test", landingTest)
+    app.use("/path", pathGetter)
     logger_all.Logg.info("Middleware added, starting connection!!")
     app.listen(db_elements.db_port,()=>
     {

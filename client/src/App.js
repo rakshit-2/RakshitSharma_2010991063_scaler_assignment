@@ -1,6 +1,8 @@
 import Axios from 'axios';
 import {useEffect} from 'react';
-import './App.css';
+import styles from './App.module.css';
+import Landing from './components/organism/landing';
+
 
 const App = (props) => {
 
@@ -24,7 +26,8 @@ const App = (props) => {
 
 
   return (
-    <div className="App">
+    <div className={styles.app__outer}>
+      <Landing/>
     </div>
   );
 }
