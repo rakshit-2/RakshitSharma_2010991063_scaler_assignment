@@ -2,6 +2,7 @@ import styles from './index.module.css';
 import Navbar from './../../molecule/navbar';
 import Banner from './../../molecule/banner';
 import Users from './../../molecule/users';
+import Cabs from './../../molecule/cabs';
 import BookingSection from './../../molecule/booking'
 import { useEffect,useState } from 'react';
 import Axios from 'axios';
@@ -19,6 +20,8 @@ const Landing = (props) => {
   const [cabData,setCabData]=useState([]);
   const [allUsers,setAllUsers]=useState([])
   const [allUserLoading,setAllUserLoading]=useState(true)
+  const [allCabs,setAllCabs]=useState([])
+  const [allCabsLoading,setAllCabsLoading]=useState(true)
 
   function fetchAllUsers()
   {
@@ -47,9 +50,25 @@ const Landing = (props) => {
   }
 
 
+  function fetchAllCabDetail()
+  {
+    setAllCabsLoading(true)
+    Axios.get('http://localhost:5000/allcab/get-all-cab',
+    {}
+    ).then((res)=>{
+      console.log(res.data)
+      if(res.data!==null)
+      {
+        setAllCabs(res.data)
+      }
+      setAllCabsLoading(false);
+    });
+  }
+
   useEffect(() => {
     fetchCabs();
     fetchAllUsers();
+    fetchAllCabDetail()
   }, []);
 
   function changeSource(value)
@@ -122,6 +141,7 @@ const Landing = (props) => {
     }).then((res)=>{
       console.log(res.data)
       fetchAllUsers();
+      fetchAllCabDetail()
     });
   }
 
@@ -143,9 +163,15 @@ const Landing = (props) => {
         />
 
         <Users  
-        
+        flag={1}
         allUsers={allUsers} allUserLoading={allUserLoading}
         
+        />
+
+        <Cabs
+        flag={0}
+        allCabs={allCabs} allCabsLoading={allCabsLoading}
+
         />
         
     </div>

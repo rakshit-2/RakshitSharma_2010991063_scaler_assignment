@@ -1,10 +1,11 @@
-.users__outer{
+.cabs__outer{
     width:100%;
     height:fit-content;
-    margin-top: 1rem;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
 }
 
-.users__inner{
+.cabs__inner{
     width:100%;
     height:fit-content;
     display: flex;
@@ -12,11 +13,11 @@
     justify-content: center;
 }
 
-.users__inner__left{
+.cabs__inner__left{
     width:40%;
-    height:fit-content;
+    height:30rem;
 }
-.users__inner__left__heading{
+.cabs__inner__left__heading{
     width:100%;
     height:fit-content;
     display: flex;
@@ -29,25 +30,24 @@
 }
 
 
-.users__inner__right{
+.cabs__inner__right{
     width:40%;
-    height:fit-content;
+    height:30rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
 }
-.users__inner__left__display{
+.cabs__inner__left__display{
     width:100%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     overflow-y: scroll;
-    max-height:35rem;
     
 }
-.users__inner__left__display__each{
+.cabs__inner__left__display__each{
     width:400px;
     height:3rem;
     display: flex;
@@ -56,7 +56,7 @@
     border:2px solid black;
     margin-bottom: 1rem;
 }
-.users__inner__left__display__each__sno{
+.cabs__inner__left__display__each__sno{
     width:fit-content;
     height: fit-content;
     padding: 5px;

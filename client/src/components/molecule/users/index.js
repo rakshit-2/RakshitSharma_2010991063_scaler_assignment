@@ -1,5 +1,5 @@
 import styles from './index.module.css';
-import logo from './../../assets/images/logo2.jpg';
+import back2 from './../../assets/images/back2.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser,faTaxi} from '@fortawesome/free-solid-svg-icons';
 import AllUserCard from './../../atom/allUserCard.js';
@@ -13,7 +13,7 @@ const Users = (props) => {
     <div className={styles.users__outer}>
         <div className={styles.users__inner}>
             <div className={styles.users__inner__left}>
-                <img src={logo} style={{width:"100%",height:"100%"}}/>
+                <img src={back2} style={{width:"100%",height:"100%"}}/>
             </div>
             <div className={styles.users__inner__right}>
                 <div className={styles.users__inner__left__heading}>
@@ -39,7 +39,7 @@ const Users = (props) => {
                             props.allUsers.map((ele)=>{
                                 return(
                                     <>
-                                    <AllUserCard ele={ele}/>
+                                    <AllUserCard flag={props.flag} ele={ele}/>
                                     </>
                                 )
                             })

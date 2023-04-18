@@ -3,11 +3,11 @@ const Logger=require('./../connect/logg');
 const ALLBOOKING=require('./../models/allBooking');
 const AllCabBooking = express.Router();
 
-AllCabBooking.post("/add-cab", async (req, res) => {
+AllCabBooking.get("/get-all-cab", async (req, res) => {
     try
     {
-        var email=req.body.email;
-        
+        const ele=await ALLBOOKING.find().exec();
+        res.status(200).send(ele)
     }
     catch (error) 
 	{
