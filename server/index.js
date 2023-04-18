@@ -7,7 +7,7 @@ const landingTest = require("./routes/landingTest")
 const pathGetter = require("./routes/pathGetter")
 const logger_all = require("./connect/logg")
 const cabGetter = require("./routes/cabGetter")
-
+const userBooking = require("./routes/userBooking")
 
 
 
@@ -24,6 +24,7 @@ mongoose.connect(db_elements.db_url,
     app.use("/test", landingTest)
     app.use("/path", pathGetter)
     app.use("/cab", cabGetter)
+    app.use("/user", userBooking)
     logger_all.Logg.info("Middleware added, starting connection!!")
     app.listen(db_elements.db_port,()=>
     {

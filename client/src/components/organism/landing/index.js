@@ -79,6 +79,31 @@ const Landing = (props) => {
 
   }
 
+
+
+  function cabBookClicked(ele,price,time)
+  {
+    if(time===null || email==="" || sourceLocation==="" || destLocation==="")
+    {
+      alert("check fair first")
+      return
+    }
+    Axios.post("http://localhost:5000/user/update-user-booking",
+    {
+
+      source:sourceLocation,
+      dest:destLocation,
+      obj:ele,
+      total_time:time,
+      total_price:price,
+      email:email
+
+    }).then((res)=>{
+      console.log(res.data)
+    });
+  }
+
+
   return (
     <div className={styles.landing__outer}>
         <Navbar/>
@@ -92,7 +117,7 @@ const Landing = (props) => {
           totalTime={totalTime} changeEmail={changeEmail}
           changeSource={changeSource} destLocation={destLocation}
           checkFairClicked={checkFairClicked} cabData={cabData}
-          cabDisplayLoading={cabDisplayLoading}
+          cabDisplayLoading={cabDisplayLoading} cabBookClicked={cabBookClicked}
         />
         
     </div>

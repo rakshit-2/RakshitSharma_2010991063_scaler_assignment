@@ -42,7 +42,7 @@ const BookingCard = (props) => {
                     </div>
                 </div>
             </div>
-            <div className={styles.booking__cab__card__content__bottom}>
+            <div className={styles.booking__cab__card__content__bottom} onClick={()=>{props.cabBookClicked(props.ele,props.totalTime*props.ele.cab_price,props.totalTime)}}>
                 Book{'\u00A0'} <FontAwesomeIcon icon={faArrowRight} size="md" className='nav__icon' />
             </div>
         </div>
