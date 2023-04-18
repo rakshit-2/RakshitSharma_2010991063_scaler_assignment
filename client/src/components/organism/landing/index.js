@@ -4,13 +4,16 @@ import Banner from './../../molecule/banner';
 import BookingSection from './../../molecule/booking'
 import { useEffect,useState } from 'react';
 import Axios from 'axios';
+import NumPlace from './../../assets/store/numPlace.json'
+
+
 
 const Landing = (props) => {
 
   const [email,setEmail]=useState("")
   const [sourceLocation,setSourceLocation]=useState("")
   const [destLocation,setDestLocation]=useState("")
-  const [totalTime,setTotalTime]=useState(12)
+  const [totalTime,setTotalTime]=useState(null)
   const [cabDisplayLoading,setCabDisplayLoading]=useState(true);
   const [cabData,setCabData]=useState([]);
 
@@ -60,6 +63,20 @@ const Landing = (props) => {
       alert("Field is empty");
       return;
     }
+
+
+    // calling the python file
+    setCabDisplayLoading(true)
+    Axios.post("http://localhost:5000/path/fetch-shortest-path",
+    {
+      start:NumPlace[sourceLocation],
+      dest:NumPlace[destLocation]
+    }).then((res)=>{
+      // console.log(res.data)
+      setTotalTime(res.data)
+      setCabDisplayLoading(false);
+    });
+
   }
 
   return (
