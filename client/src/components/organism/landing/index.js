@@ -121,6 +121,7 @@ const Landing = (props) => {
 
     }).then((res)=>{
       console.log(res.data)
+      fetchAllUsers();
     });
   }
 
@@ -141,7 +142,11 @@ const Landing = (props) => {
           cabDisplayLoading={cabDisplayLoading} cabBookClicked={cabBookClicked}
         />
 
-        <Users  allUsers={allUsers} allUserLoading={allUserLoading}/>
+        <Users  
+        
+        allUsers={allUsers} allUserLoading={allUserLoading}
+        
+        />
         
     </div>
   );
