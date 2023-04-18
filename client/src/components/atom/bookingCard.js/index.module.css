@@ -86,3 +86,28 @@
     color: white;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+
+
+
+@media screen and (max-width:605px)
+{
+    .booking__cab__card{
+        width:300px;
+        height:5rem;
+    }
+    .booking__cab__card__img{
+        width:60px;
+        height:60px;
+        padding:10px;
+        border-radius: 10px;
+    }
+    .booking__cab__card__content{
+        width:240px;
+        height: 88%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-around;
+        padding:5px;
+    }
+}

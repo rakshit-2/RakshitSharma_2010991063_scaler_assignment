@@ -2,14 +2,14 @@ import styles from './index.module.css';
 import * as React from 'react';
 import logo from './../../assets/images/logo2.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser,faTaxi,faArrowRight} from '@fortawesome/free-solid-svg-icons';
+import { faUser,faTaxi,faArrowRight, faArrowDown} from '@fortawesome/free-solid-svg-icons';
 import BookingForm from './../../assets/store/bookingForm.json'
 import Places from './../../assets/store/places.json';
 import {useState} from 'react';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import BookingCard from '../../atom/bookingCard.js';
-
+import { Ring } from '@uiball/loaders'
 
 
 const Booking = (props) => {
@@ -18,7 +18,7 @@ const Booking = (props) => {
 
 
   return (
-    <div className={styles.booking__outer}>
+    <div className={styles.booking__outer} id="book">
         <div className={styles.booking__inner}>
             <div className={styles.booking__inner__left}>
                 <div className={styles.booking__inner__left__heading}>
@@ -96,10 +96,27 @@ const Booking = (props) => {
             </div>
             <div className={styles.booking__inner__right}>
                 <div className={styles.booking__inner__right__heading}>
-                    <span style={{textDecoration:"underline"}}>Pick Up:</span> {'\u00A0'} {props.sourceLocation?(props.sourceLocation):("Select Pick-Up")} {'\u00A0'} 
-                    {'\u00A0'}<FontAwesomeIcon icon={faArrowRight} size="lg" className='nav__icon' /> 
-                    {'\u00A0'}{'\u00A0'} <span style={{textDecoration:"underline"}}>Drop:</span> {'\u00A0'} {props.destLocation?(props.destLocation):("Select Drop")} {'\u00A0'} 
+                    <span style={{textDecoration:"underline"}}>Pick Up:</span> 
+                    {'\u00A0'}{props.sourceLocation?(props.sourceLocation):("Select Pick-Up")} 
+                    {'\u00A0'}{'\u00A0'}
+                    <FontAwesomeIcon icon={faArrowRight} size="lg" className='nav__icon' /> 
+                    {'\u00A0'}{'\u00A0'} 
+                    <span style={{textDecoration:"underline"}}>Drop:</span> 
+                    {'\u00A0'}{props.destLocation?(props.destLocation):("Select Drop")}{'\u00A0'} 
                 </div>
+
+                <div className={styles.booking__inner__right__heading__mobile}>
+                    <div className={styles.booking__inner__right__heading__top}>
+                        <span style={{textDecoration:"underline"}}>Pick Up:</span> {'\u00A0'} {props.sourceLocation?(props.sourceLocation):("Select Pick-Up")}
+                    </div>
+                    <div className={styles.booking__inner__right__heading__top}>
+                        <FontAwesomeIcon icon={faArrowDown} size="lg" />
+                    </div>
+                    <div className={styles.booking__inner__right__heading__top}>
+                        <span style={{textDecoration:"underline"}}>Drop:</span> {'\u00A0'} {props.destLocation?(props.destLocation):("Select Drop")}
+                    </div>
+                </div>
+
                 <div className={styles.booking__inner__right__time}>
                     <span style={{textDecoration:"underline"}}>Minimum Time:</span> {'\u00A0'} {props.totalTime?(<>{props.totalTime} min</>):("Check Fair!")} {'\u00A0'}
                     
@@ -108,7 +125,12 @@ const Booking = (props) => {
                     {
                         props.cabDisplayLoading?(
                         <>
-                        loading
+                        <Ring 
+                            size={40}
+                            lineWeight={5}
+                            speed={2} 
+                            color="black" 
+                            />
                         </>
                         ):(
                         props.cabData.map((ele)=>{

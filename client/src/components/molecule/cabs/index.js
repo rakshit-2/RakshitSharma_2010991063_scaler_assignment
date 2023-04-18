@@ -3,14 +3,14 @@ import back4 from './../../assets/images/back4.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser,faTaxi} from '@fortawesome/free-solid-svg-icons';
 import AllUserCard from './../../atom/allUserCard.js';
-
+import { Ring } from '@uiball/loaders'
 
 const Cabs = (props) => {
 
 
   return (
     <>
-    <div className={styles.cabs__outer}>
+    <div className={styles.cabs__outer} id="Cabs">
         <div className={styles.cabs__inner}>
             <div className={styles.cabs__inner__right}>
                 <div className={styles.cabs__inner__left__heading}>
@@ -30,7 +30,12 @@ const Cabs = (props) => {
                 <div className={styles.cabs__inner__left__display}>
                     {
                         props.allCabsLoading?(
-                            <>Loading</>
+                            <Ring 
+                            size={40}
+                            lineWeight={5}
+                            speed={2} 
+                            color="black" 
+                            />
                         ):(
                             props.allCabs.map((ele)=>{
                                 return(

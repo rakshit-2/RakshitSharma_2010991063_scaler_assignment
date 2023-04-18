@@ -29,7 +29,7 @@ const Landing = (props) => {
     Axios.get('http://localhost:5000/user/user/get-data',
     {}
     ).then((res)=>{
-      setAllUsers(res.data.data)
+      setAllUsers(res.data.data.reverse())
       setAllUserLoading(false)
     });
   }
@@ -59,7 +59,7 @@ const Landing = (props) => {
       console.log(res.data)
       if(res.data!==null)
       {
-        setAllCabs(res.data)
+        setAllCabs(res.data.reverse())
       }
       setAllCabsLoading(false);
     });

@@ -63,3 +63,49 @@
     font-size: 13px;
     font-weight: 600;
 }
+
+
+
+@media screen and (max-width:1096px)
+{
+    .cabs__inner{
+        width:100%;
+        height:fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+}
+
+
+
+
+@media screen and (max-width:792px)
+{
+    .cabs__inner__left__heading{
+        font-size: 20px;
+        font-weight: 800;
+    }
+    .cabs__inner{
+        flex-wrap: wrap;
+    }
+    .cabs__inner__left{
+        width:400px;
+    }
+    .cabs__inner__right{
+        width:90%;
+    }
+}
+
+
+
+@media screen and (max-width:415px)
+{
+    .cabs__inner__left{
+        width:290px;
+        height:200px
+    }
+    .cabs__inner__right{
+        width:90%;
+    }
+}

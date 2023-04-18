@@ -15,11 +15,19 @@ const Navbar = (props) => {
                 </div>
             </div>
             <div className={styles.navbar__inner__right}>
-                <div className={styles.navbar__center__each}>
+                <a href="#User" className={styles.navbar__center__each}>
                     Users  <FontAwesomeIcon icon={faUser} size="lg" className='nav__icon' />
+                </a>
+                <a href="#Cabs" className={styles.navbar__center__each}>
+                    Cabs Booked <FontAwesomeIcon icon={faTaxi} size="lg" className='nav__icon' />
+                </a>
+            </div>
+            <div className={styles.navbar__inner__right__mobile}>
+                <div className={styles.navbar__center__each}>
+                    <FontAwesomeIcon icon={faUser} size="lg" className='nav__icon' />
                 </div>
                 <div className={styles.navbar__center__each}>
-                    Cabs Booked <FontAwesomeIcon icon={faTaxi} size="lg" className='nav__icon' />
+                    <FontAwesomeIcon icon={faTaxi} size="lg" className='nav__icon' />
                 </div>
             </div>
         </div>

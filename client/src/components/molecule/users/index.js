@@ -3,19 +3,19 @@ import back2 from './../../assets/images/back2.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser,faTaxi} from '@fortawesome/free-solid-svg-icons';
 import AllUserCard from './../../atom/allUserCard.js';
-
+import { Ring } from '@uiball/loaders'
 
 const Users = (props) => {
 
 
   return (
     <>
-    <div className={styles.users__outer}>
+    <div className={styles.users__outer} id="User">
         <div className={styles.users__inner}>
             <div className={styles.users__inner__left}>
                 <img src={back2} style={{width:"100%",height:"100%"}}/>
             </div>
-            <div className={styles.users__inner__right}>
+            <div className={styles.users__inner__right} >
                 <div className={styles.users__inner__left__heading}>
                     All Users
                 </div>
@@ -34,7 +34,13 @@ const Users = (props) => {
                     </div>
                     {
                         props.allUserLoading?(
-                            <>Loading</>
+                            // true?(
+                            <Ring 
+                            size={40}
+                            lineWeight={5}
+                            speed={2} 
+                            color="black" 
+                            />
                         ):(
                             props.allUsers.map((ele)=>{
                                 return(

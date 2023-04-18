@@ -74,6 +74,8 @@
     cursor: pointer;
     font-weight: 800;
     font-size: 14px;
+    color:black;
+    text-decoration: none;
     border:2px solid black;
     margin-right: 1rem;
 }
@@ -83,3 +85,23 @@
     background-color: black;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+
+.navbar__inner__right__mobile{
+    width:fit-content;
+    height:100%;
+    display: none;
+    align-items: center;
+    justify-content: space-around;
+}
+
+@media screen and (max-width:450px)
+{
+    .navbar__inner__right__mobile{
+        display: flex;
+    }
+    .navbar__inner__right{
+        display: none;
+    }
+}
+
+

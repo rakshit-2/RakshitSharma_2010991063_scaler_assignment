@@ -17,12 +17,12 @@ const Banner = (props) => {
                     We constantly experiment to come up with industry-first features for our riders that eventually become a norm
                 </div>
                 <div className={styles.banner__left__bottom}>
-                    <div className={styles.banner__left__bottom__button}>
+                    <a href="#book" className={styles.banner__left__bottom__button}>
                         Explore <FontAwesomeIcon icon={faMagnifyingGlass} size="lg" className='nav__icon' />
-                    </div>
-                    <div className={styles.banner__left__bottom__button}>
+                    </a>
+                    <a href="#book" className={styles.banner__left__bottom__button}>
                         Book Now  <FontAwesomeIcon icon={faArrowRight} size="lg" className='nav__icon' />
-                    </div>
+                    </a>
                 </div>
             </div>
             <div className={styles.banner__right}>

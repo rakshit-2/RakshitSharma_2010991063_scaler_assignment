@@ -124,8 +124,169 @@
 }
 
 
+.booking__inner__right__heading__top{
+    width:100%;
+    height:fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+.booking__inner__right__heading__mobile{
+    width:fit-content;
+    height:fit-content;
+    display: flex;
+    font-weight: 600;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 2rem;
+    display: none;
+}
 
 
 
 
 
+
+@media screen and (max-width:1264px)
+{
+    .booking__inner{
+        justify-content:space-around;
+    }
+    .booking__inner__right{
+        width:60%;
+    }
+}
+
+
+@media screen and (max-width:1053px)
+{
+    .booking__each{
+        width:260px;
+        height:fit-content;
+        margin-bottom: 2rem;
+    }
+    .booking__inner__left__heading{
+        font-weight: 800;
+        font-size: 20px;
+        margin-bottom: 1rem;
+    }
+    .booking__each__heading{
+        font-weight: 500;
+        margin-bottom: 6px;
+    }
+    .booking__inner__right{
+        width:70%;
+    }
+}
+
+
+
+@media screen and (max-width:968px)
+{
+    .booking__inner{
+        flex-wrap: wrap;
+    }
+    .booking__each{
+        width:350px;
+        height:fit-content;
+        margin-bottom: 2rem;
+    }
+    .booking__inner__left__heading{
+        font-weight: 800;
+        font-size: 20px;
+        margin-bottom: 1rem;
+    }
+    .booking__each__heading{
+        font-weight: 500;
+        margin-bottom: 6px;
+    }
+    .booking__inner__right{
+        width:90%;
+        margin-bottom: 2rem;
+    }
+}
+
+
+@media screen and (max-width:769px)
+{
+    .booking__each{
+        width:350px;
+        height:fit-content;
+        margin-bottom: 1rem;
+    }
+    .booking__inner__left__heading{
+        font-weight: 800;
+        font-size: 20px;
+        margin-bottom: 1rem;
+    }
+    .booking__each__heading{
+        font-weight: 500;
+        margin-bottom: 6px;
+    }
+    .booking__inner__left{
+        margin-top: 1rem;
+    }
+    .booking__inner__right{
+        width:90%;
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width:702px)
+{
+    .booking__each{
+        width:320px;
+        height:fit-content;
+        margin-bottom: 1rem;
+    }
+    .booking__inner__left__heading{
+        font-weight: 800;
+        font-size: 20px;
+        margin-bottom: 1rem;
+    }
+    .booking__each__heading{
+        font-weight: 500;
+        margin-bottom: 6px;
+    }
+    .booking__inner__left{
+        margin-top: 1rem;
+    }
+    .booking__inner__right{
+        width:90%;
+        margin-bottom: 2rem;
+    }
+}
+
+
+@media screen and (max-width:605px)
+{
+    .booking__each{
+        width:290px;
+        height:fit-content;
+        margin-bottom: 1rem;
+    }
+    .booking__inner__left__heading{
+        font-weight: 800;
+        font-size: 20px;
+        margin-bottom: 1rem;
+    }
+    .booking__each__heading{
+        font-weight: 500;
+        margin-bottom: 6px;
+    }
+    .booking__inner__left{
+        margin-top: 1rem;
+    }
+    .booking__inner__right{
+        width:90%;
+        margin-bottom: 2rem;
+    }
+    .booking__inner__right__heading{
+        display: none;
+    }
+    .booking__inner__right__heading__mobile{
+        display: flex;
+    }
+}
