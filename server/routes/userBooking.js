@@ -3,6 +3,16 @@ const Logger=require('./../connect/logg');
 const USER=require('./../models/user');
 const ALLBOOKING=require('./../models/allBooking');
 const userBooking = express.Router();
+const nodemailer=require("nodemailer");
+const db_elements = require("./../connect/getENV");
+
+var transporter=nodemailer.createTransport({
+    service:"gmail",
+    auth:{
+        user:db_elements.db_email,
+        pass:db_elements.dp_email_pass
+    }
+})
 
 
 const dateObject = new Date();
@@ -48,6 +58,26 @@ userBooking.post("/update-user-booking", async (req, res) => {
                 user_email:email
             }]);
 
+            
+
+            console.log(email)
+            var mailOptions={
+                from:db_elements.db_email,
+                to:email,
+                subject:"Booking Confirmed!!",
+                text:`Booking Confirmed ${cab_obj["cab_name"]}`
+            }
+
+            transporter.sendMail(mailOptions,function(error,info){
+                if(error)
+                {
+                    console.log(error);
+                }
+                else
+                {
+                    console.log("email sent"+info.response)
+                }
+            })
 
             res.status(200).send({message:"InsertUpdateSuccess",data:email})
         }
@@ -69,6 +99,25 @@ userBooking.post("/update-user-booking", async (req, res) => {
                 cab_seats:cab_obj["cab_seats"],
                 user_email:email
             }]);
+
+            console.log(email)
+            var mailOptions={
+                from:db_elements.db_email,
+                to:email,
+                subject:"Cab Booking Confirmed!!",
+                text:`Booking Confirmed ${cab_obj["cab_name"]},\n Total price of Trip = Rs${cab_obj["user_total_price"]}/-only,\n User Email: ${email},\n date&time : ${cab_obj["booking_time"]}`
+            }
+
+            transporter.sendMail(mailOptions,function(error,info){
+                if(error)
+                {
+                    console.log(error);
+                }
+                else
+                {
+                    console.log("email sent"+info.response)
+                }
+            })
             res.status(200).send({message:"UpdateSuccess",data:email})
         }
         
