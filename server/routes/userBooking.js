@@ -81,4 +81,33 @@ userBooking.post("/update-user-booking", async (req, res) => {
 })
 
 
+
+
+
+
+
+userBooking.get("/user/get-data", async (req, res) => {
+	try 
+	{
+        const ele=await USER.find().exec();
+		
+        if(ele!==null)
+		{
+			res.status(200).send({message:"fetchSuccess",data:ele});
+			Logger.Logg.success("userFetchSuccess")
+		}
+		else
+		{
+			Logger.Logg.error("userFetchFailed")
+			res.status(200).send({message:"fetchFailed",data:{}});
+		}
+    }
+	catch (error) 
+	{
+		Logger.Logg.error(error.message)
+        res.status(404).json({message:error.message});
+    }
+})
+
+
 module.exports = userBooking

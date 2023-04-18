@@ -1,0 +1,16 @@
+.users__inner__left__display__each{
+    width:400px;
+    height:3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border:2px solid black;
+    margin-bottom: 1rem;
+}
+.users__inner__left__display__each__sno{
+    width:fit-content;
+    height: fit-content;
+    padding: 5px;
+    font-size: 13px;
+    font-weight: 600;
+}
