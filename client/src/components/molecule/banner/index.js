@@ -18,10 +18,10 @@ const Banner = (props) => {
                 </div>
                 <div className={styles.banner__left__bottom}>
                     <div className={styles.banner__left__bottom__button}>
-                        Explore <FontAwesomeIcon icon={faMagnifyingGlass} size="lg" color={props.errorColor} className='nav__icon' />
+                        Explore <FontAwesomeIcon icon={faMagnifyingGlass} size="lg" className='nav__icon' />
                     </div>
                     <div className={styles.banner__left__bottom__button}>
-                        Book Now  <FontAwesomeIcon icon={faArrowRight} size="lg" color={props.errorColor} className='nav__icon' />
+                        Book Now  <FontAwesomeIcon icon={faArrowRight} size="lg" className='nav__icon' />
                     </div>
                 </div>
             </div>

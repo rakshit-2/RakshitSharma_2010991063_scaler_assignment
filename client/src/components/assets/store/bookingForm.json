@@ -1,0 +1,18 @@
+{
+    "heading":"Book Cab",
+    "email":{
+        "label":"Email",
+        "placeholder":"abc@gmail.com",
+        "type":"email"
+    },
+    "source":{
+        "label":"Pick-Up Location",
+        "placeholder":"Elante Mall Gate 1, Chd",
+        "type":"text"
+    },
+    "dest":{
+        "label":"Drop Location",
+        "placeholder":"Sector 5, Mansa Devi Complex",
+        "type":"text"
+    }
+}
