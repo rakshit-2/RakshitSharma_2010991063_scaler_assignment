@@ -1,0 +1,88 @@
+
+.booking__cab__card{
+    width:290px;
+    height:5rem;
+    margin:0.5rem;
+    padding: 5px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+.booking__cab__card__img{
+    width:60px;
+    height:60px;
+    padding:10px;
+    border-radius: 10px;
+}
+.booking__cab__card__content{
+    width:200px;
+    height: 88%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding:5px;
+}
+.booking__cab__card__content__top{
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: fit-content;
+    margin-bottom: 10px;
+}
+.booking__cab__card__content__bottom{
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+}
+.booking__cab__card__content__left{
+    width:65%;
+    height:100%;
+}
+.booking__cab__card__content__left__heading{
+    width:100%;
+    height:fit-content;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+.booking__cab__card__content__left__heading__small{
+    width:100%;
+    height:fit-content;
+    font-size: 10px;
+    font-weight: 400;
+    color: rgb(47, 47, 47);
+}
+.booking__cab__card__content__right{
+    width:fit-content;
+    height:100%;
+}
+
+
+.booking__cab__card__book{
+    width:100%;
+    height:fit-content;
+}
+.booking__cab__card__content__bottom{
+    width:fit-content;
+    height:fit-content;
+    padding: 5px;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+    border:2px solid black;
+    font-size: 12px;
+    margin-right: 2rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+.booking__cab__card__content__bottom:hover{
+    background-color: black;
+    transition-duration: 0.6s;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
