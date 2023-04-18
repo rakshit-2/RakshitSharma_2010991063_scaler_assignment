@@ -7,7 +7,8 @@ import BookingSection from './../../molecule/booking'
 import { useEffect,useState } from 'react';
 import Axios from 'axios';
 import NumPlace from './../../assets/store/numPlace.json'
-
+import { faTriangleExclamation,faCircleCheck,faCircleInfo } from '@fortawesome/free-solid-svg-icons';
+import ErrorCard from './../../atom/errorCard';
 
 
 const Landing = (props) => {
@@ -22,6 +23,11 @@ const Landing = (props) => {
   const [allUserLoading,setAllUserLoading]=useState(true)
   const [allCabs,setAllCabs]=useState([])
   const [allCabsLoading,setAllCabsLoading]=useState(true)
+  
+  const[errorDisplay,setErrorDisplay]=useState("none")
+  const[errorIcon,setErrorIcon]=useState()
+  const[errorText,setErrorText]=useState("Error")
+  const[errorColor,setErrorColor]=useState("red")
 
   function fetchAllUsers()
   {
@@ -85,22 +91,54 @@ const Landing = (props) => {
   }
 
 
+
+  function myStopFunction() 
+  {
+    setErrorDisplay("none");
+  }
+
+  function showError(message,type)
+  {
+    setErrorText(message)
+    if(type==="success")
+    {
+      setErrorIcon(faCircleCheck);
+      setErrorDisplay("flex");
+      setErrorColor("green")
+    }
+    else if(type==="info")
+    {
+      setErrorIcon(faCircleInfo);
+      setErrorDisplay("flex")
+      setErrorColor("#FD9229")
+    }
+    else
+    {
+      setErrorIcon(faTriangleExclamation);
+      setErrorDisplay("flex")
+      setErrorColor("red")
+    }
+    setTimeout(myStopFunction, 4000);
+  }
+
+
   function checkFairClicked()
   {
     var emailCheck=/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
     if(emailCheck.test(email)===false)
     {
-      alert("Email is incorrect");
+
+      showError("Email is incorrect","error");
       return;
     }
     if(sourceLocation===destLocation)
     {
-      alert("Both Locations are same");
+      showError("Both Locations are same","error");
       return;
     }
     if(sourceLocation==="" || destLocation==="" || email==="")
     {
-      alert("Field is empty");
+      showError("Field is empty","error");
       return;
     }
 
@@ -125,7 +163,7 @@ const Landing = (props) => {
   {
     if(time===null || email==="" || sourceLocation==="" || destLocation==="")
     {
-      alert("check fair first")
+      showError(" Check Fair First!!","error")
       return
     }
     Axios.post("http://localhost:5000/user/update-user-booking",
@@ -147,14 +185,29 @@ const Landing = (props) => {
 
 
   return (
+    <>
+    
+    
     <div className={styles.landing__outer}>
-        <Navbar/>
+      <ErrorCard 
+        errorDisplay={errorDisplay}
+        errorIcon={errorIcon}
+        errorText={errorText}
+        errorColor={errorColor}
+
+        />
+        <Navbar
+        />
         <div className={styles.langing__gap}></div>
 
-        <Banner/>
+        <Banner
+        />
 
-        <BookingSection 
-
+        <BookingSection
+          errorDisplay={errorDisplay}
+          errorIcon={errorIcon}
+          errorText={errorText}
+          errorColor={errorColor} 
           changeDest={changeDest} sourceLocation={sourceLocation} 
           totalTime={totalTime} changeEmail={changeEmail}
           changeSource={changeSource} destLocation={destLocation}
@@ -165,16 +218,15 @@ const Landing = (props) => {
         <Users  
         flag={1}
         allUsers={allUsers} allUserLoading={allUserLoading}
-        
         />
 
         <Cabs
         flag={0}
         allCabs={allCabs} allCabsLoading={allCabsLoading}
-
         />
         
     </div>
+    </>
   );
 }
 

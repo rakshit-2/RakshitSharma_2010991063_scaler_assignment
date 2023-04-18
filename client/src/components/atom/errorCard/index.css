@@ -1,0 +1,48 @@
+
+.error__outer{
+    width:100%;
+    height:fit-content;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 8;
+    
+}
+.error__inner{
+    padding:10px;
+    padding-right: 2rem;
+    width:fit-content;
+    height: fit-content;
+    font-size: 13px;
+    border-radius: 5px;
+    border-left:3px solid grey;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    animation-name: errorMsg;
+    animation-duration:4s;
+    animation-timing-function: ease-in-out;
+    opacity:0;
+    background-color: rgb(252, 252, 252);
+    cursor:not-allowed;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+@keyframes errorMsg {
+    0%{
+        opacity:0;
+        margin-top: 0rem;
+    }
+    40%{
+        opacity:1;
+        margin-top:5rem;
+    }
+    60%{
+        opacity:1;
+        margin-top: 5rem;
+    }
+    100%{
+        opacity:0;
+        margin-top: 0rem;
+    }
+}

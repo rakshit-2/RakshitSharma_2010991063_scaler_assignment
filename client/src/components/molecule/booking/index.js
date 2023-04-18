@@ -135,7 +135,10 @@ const Booking = (props) => {
                         ):(
                         props.cabData.map((ele)=>{
                             return(
-                                <BookingCard ele={ele} totalTime={props.totalTime} cabBookClicked={props.cabBookClicked}/>
+                                <BookingCard 
+                                ele={ele} 
+                                totalTime={props.totalTime} 
+                                cabBookClicked={props.cabBookClicked}/>
                             )
                         })
                         )
