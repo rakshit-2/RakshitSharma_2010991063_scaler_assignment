@@ -1,6 +1,7 @@
 const express = require("express");
 const Logger=require('./../connect/logg');
 const USER=require('./../models/user');
+const ALLBOOKING=require('./../models/allBooking');
 const userBooking = express.Router();
 
 
@@ -36,6 +37,18 @@ userBooking.post("/update-user-booking", async (req, res) => {
 				{ user_cabs: cab_obj } 
 			}
             const ele3=await USER.findOneAndUpdate(check_email1,check_update1);
+
+            const ele4=await ALLBOOKING.insertMany([
+            {
+                cab_name:cab_obj["cab_name"],
+                cab_price:cab_obj["user_total_price"],
+                cab_image:cab_obj["cab_image"],
+                cab_type:cab_obj["cab_type"],
+                cab_seats:cab_obj["cab_seats"],
+                user_email:email
+            }]);
+
+
             res.status(200).send({message:"InsertUpdateSuccess",data:email})
         }
         else
@@ -46,6 +59,16 @@ userBooking.post("/update-user-booking", async (req, res) => {
 				{ user_cabs: cab_obj } 
 			}
             const ele3=await USER.findOneAndUpdate(check_email1,check_update1);
+
+            const ele4=await ALLBOOKING.insertMany([
+            {
+                cab_name:cab_obj["cab_name"],
+                cab_price:cab_obj["user_total_price"],
+                cab_image:cab_obj["cab_image"],
+                cab_type:cab_obj["cab_type"],
+                cab_seats:cab_obj["cab_seats"],
+                user_email:email
+            }]);
             res.status(200).send({message:"UpdateSuccess",data:email})
         }
         
