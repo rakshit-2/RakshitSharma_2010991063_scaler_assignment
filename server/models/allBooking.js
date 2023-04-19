@@ -2,6 +2,9 @@ const mongoose = require("mongoose");
 
 const schema = mongoose.Schema;
 
+
+
+// ALLBOOKING Schema keep record of all the booking on the webapp
 let ele = new schema({
 	cab_name:{
 		type:String

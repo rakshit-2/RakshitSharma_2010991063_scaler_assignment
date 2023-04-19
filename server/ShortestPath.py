@@ -1,5 +1,7 @@
 import sys
 
+
+# dijkstra algo function 
 def Dis(arr,s):
     def finder(dis,vis):
         minn=sys.maxsize
@@ -26,10 +28,10 @@ def Dis(arr,s):
             if(not vis[v] and arr[u][v]!=0 and (dis[u]+arr[u][v]<dis[v])):
                 dis[v]=dis[u]+arr[u][v]
     
-    print(dis[int(sys.argv[2])])
+    print(dis[int(sys.argv[2])]) #printing the desired output for the specific source and destination
     # li.append(dis[i])
     
-
+# the desied graph given for the assessment
 arr=[[0,5,7,0,0,0],
      [5,0,0,15,20,0],
      [7,0,0,5,35,0],

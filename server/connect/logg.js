@@ -1,5 +1,6 @@
 const chalk = require('chalk')
 
+// chalk for the detailing of the console(highlight errors,etc)
 exports.Logg = {
     error: (message) => {
         console.log(chalk.red(message));

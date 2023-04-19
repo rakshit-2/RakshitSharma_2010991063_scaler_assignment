@@ -177,6 +177,12 @@ const Landing = (props) => {
       email:email
 
     }).then((res)=>{
+      if(res.data.data===false)
+      {
+        showError(res.data.message,"error")
+        return
+      }
+      showError("Cab Booked Successfully!!","error")
       console.log(res.data)
       fetchAllUsers();
       fetchAllCabDetail()

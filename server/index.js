@@ -17,11 +17,14 @@ const app=express()
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.json())
+
+// creating Connection with the database
 mongoose.connect(db_elements.db_url,
 {
 
 }).then(()=>
 {
+    // all thr routes available are activated
     app.use("/test", landingTest)
     app.use("/path", pathGetter)
     app.use("/cab", cabGetter)

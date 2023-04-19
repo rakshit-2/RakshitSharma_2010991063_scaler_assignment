@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 
 const schema = mongoose.Schema;
 
+// CAB Schema for all the types of cabs present to pickup
 let ele = new schema({
 	cab_name:{
 		type:String
