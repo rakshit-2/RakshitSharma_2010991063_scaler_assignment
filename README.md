@@ -4,7 +4,7 @@
 Welcome to my project! This is a Cab Booking App made with MERN stack. It allows users to quickly and easily book cabs with multiple options and price variations. With this App, users can effortlessly reach their destination with the minimum time and price.
 
 
-![alt text](https://github.com/rakshit-2/scaler_assignment/ss1.jpg?raw=true)
+![alt text](https://github.com/rakshit-2/scaler_assignment/ss1.png?raw=true)
 
 dijkstra algorith(Python) is used to calculate the shortest path using the source and destination from teh user. Once the shortest path has been calculated, the website would display the estimated time and distance of the trip to the user, as well as the fare.
 
