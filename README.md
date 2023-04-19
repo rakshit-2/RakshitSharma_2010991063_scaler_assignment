@@ -3,10 +3,6 @@
 ## Description
 Welcome to my project! This is a Cab Booking App made with MERN stack. It allows users to quickly and easily book cabs with multiple options and price variations. With this App, users can effortlessly reach their destination with the minimum time and price.
 
-
-![ss1](https://user-images.githubusercontent.com/86184006/232975630-b8ce8bfa-94ca-49fb-8a79-2f22221042a5.png)
-
-
 dijkstra algorith(Python) is used to calculate the shortest path using the source and destination from teh user. Once the shortest path has been calculated, the website would display the estimated time and distance of the trip to the user, as well as the fare.
 
 Python file for the Shortest path is called using Child-process(nodejs library)
@@ -76,15 +72,17 @@ react-router-dom: ^4.2.2 | mongoose: ^7.0.3
 axios: ^1.3.5 | 
 @mui/material ^5.12.1 |
 
-# Screenshots of this project
+## Screenshots of this project
 
-User visit Landing page
+#User visit Landing page
 ![ss1](https://user-images.githubusercontent.com/86184006/232975942-8135ec2d-3772-43d1-86ca-e6664aafdd1b.png)
 
-user visit Cab Booking
+#user visit Cab Booking
 ![ss2](https://user-images.githubusercontent.com/86184006/232976092-5e9d64ee-476d-41d8-a6a4-d540d58d410e.png)
 
-Responsive Design
+
+#Responsive Design
+
 ![ss5](https://user-images.githubusercontent.com/86184006/232976182-c2cf7033-efe0-4006-acba-b133473b1979.png)
 
 ![ss6](https://user-images.githubusercontent.com/86184006/232976216-db408d6f-04b9-49b4-9774-02aa4dd72c35.png)
