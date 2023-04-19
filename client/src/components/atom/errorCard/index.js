@@ -1,9 +1,8 @@
 
 import "./index.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTriangleExclamation,faCircleCheck,faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 
-
+// error card is the floating component which is used in place of alert box for better user experience
 const ErrorCard = (props) => {
   return(
     <>

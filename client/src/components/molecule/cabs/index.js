@@ -1,7 +1,5 @@
 import styles from './index.module.css';
 import back4 from './../../assets/images/back4.jpg';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser,faTaxi} from '@fortawesome/free-solid-svg-icons';
 import AllUserCard from './../../atom/allUserCard.js';
 import { Ring } from '@uiball/loaders'
 
@@ -51,7 +49,7 @@ const Cabs = (props) => {
                 </div>
             </div>
             <div className={styles.cabs__inner__left}>
-                <img src={back4} style={{width:"100%",height:"100%"}}/>
+                <img src={back4} style={{width:"100%",height:"100%"}} alt="backgroundImg"/>
             </div>
         </div>
     </div>

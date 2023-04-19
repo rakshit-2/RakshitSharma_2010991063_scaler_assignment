@@ -1,10 +1,9 @@
 import styles from './index.module.css';
-import logo from './../../assets/images/logo2.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser,faTaxi,faArrowRight} from '@fortawesome/free-solid-svg-icons';
+import {faArrowRight} from '@fortawesome/free-solid-svg-icons';
 
 
-
+// all users whohav booked a cab are fetched here for display
 const AllCardUser = (props) => {
     
     return (
@@ -26,7 +25,7 @@ const AllCardUser = (props) => {
             <>
             <div className={styles.users__inner__left__display__each}>           
                 <div className={styles.users__inner__left__display__each__sno}>
-                    {props.ele._id.slice(0,5)}
+                    {props.ele._id.slice(3,8)}
                 </div>
                 <div className={styles.users__inner__left__display__each__sno}>
                     {props.ele.cab_name}

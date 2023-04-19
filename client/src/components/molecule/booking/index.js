@@ -1,11 +1,9 @@
 import styles from './index.module.css';
 import * as React from 'react';
-import logo from './../../assets/images/logo2.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser,faTaxi,faArrowRight, faArrowDown} from '@fortawesome/free-solid-svg-icons';
+import {faArrowRight, faArrowDown} from '@fortawesome/free-solid-svg-icons';
 import BookingForm from './../../assets/store/bookingForm.json'
 import Places from './../../assets/store/places.json';
-import {useState} from 'react';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import BookingCard from '../../atom/bookingCard.js';

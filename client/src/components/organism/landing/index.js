@@ -13,6 +13,9 @@ import ErrorCard from './../../atom/errorCard';
 
 const Landing = (props) => {
 
+
+
+  // global states passed from parent to child so on
   const [email,setEmail]=useState("")
   const [sourceLocation,setSourceLocation]=useState("")
   const [destLocation,setDestLocation]=useState("")
@@ -24,11 +27,15 @@ const Landing = (props) => {
   const [allCabs,setAllCabs]=useState([])
   const [allCabsLoading,setAllCabsLoading]=useState(true)
   
+
+  //error change states for the dropdown
   const[errorDisplay,setErrorDisplay]=useState("none")
   const[errorIcon,setErrorIcon]=useState()
   const[errorText,setErrorText]=useState("Error")
   const[errorColor,setErrorColor]=useState("red")
 
+
+  //fetch all user function (fetches all the users which are present in the USER schema)
   function fetchAllUsers()
   {
     setAllUserLoading(true)
@@ -40,6 +47,8 @@ const Landing = (props) => {
     });
   }
 
+  //fetch cabs function(fetches all the cabs that are available means type of cabs such as cab GO,cab Xl etc)
+  //with this user gets the freedom of choice and better experience
   function fetchCabs()
   {
     setCabDisplayLoading(true)
@@ -55,7 +64,7 @@ const Landing = (props) => {
     });
   }
 
-
+  //fetch all cabs detail function(fetches all the cabs that have been booked by each user with their timestamp, price etc)
   function fetchAllCabDetail()
   {
     setAllCabsLoading(true)
@@ -71,12 +80,16 @@ const Landing = (props) => {
     });
   }
 
+
+  //useEffect calling each function on load with an empty [] so the useEffect is called only once
   useEffect(() => {
     fetchCabs();
     fetchAllUsers();
     fetchAllCabDetail()
   }, []);
 
+
+  //parent change state function - changes value of the global state
   function changeSource(value)
   {
     setSourceLocation(value);
@@ -91,7 +104,7 @@ const Landing = (props) => {
   }
 
 
-
+  //error check function for the setTimeout call - changes value back to none once done
   function myStopFunction() 
   {
     setErrorDisplay("none");
@@ -122,12 +135,15 @@ const Landing = (props) => {
   }
 
 
+
+  //check Fair clicked fetches the shortest time path form the python file
   function checkFairClicked()
   {
-    var emailCheck=/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    //email validation using regex is done -- causing 3 linting error reason unknown
+    var emailCheck=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
     if(emailCheck.test(email)===false)
     {
-
+      //error displayer function
       showError("Email is incorrect","error");
       return;
     }
@@ -159,6 +175,7 @@ const Landing = (props) => {
 
 
 
+  //cab booking clicked function(as soon as the cab is booked the user gets the email of confermation using node mailer)
   function cabBookClicked(ele,price,time)
   {
     if(time===null || email==="" || sourceLocation==="" || destLocation==="")

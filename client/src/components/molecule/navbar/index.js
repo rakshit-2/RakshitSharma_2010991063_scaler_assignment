@@ -11,7 +11,7 @@ const Navbar = (props) => {
         <div className={styles.navbar__inner}>
             <div className={styles.navbar__inner__left}>
                 <div className={styles.navbar__logo}>
-                    <img src={logo} style={{width:"100%",height:"100%"}}/>
+                    <img src={logo} style={{width:"100%",height:"100%"}} alt="logo"/>
                 </div>
             </div>
             <div className={styles.navbar__inner__right}>
