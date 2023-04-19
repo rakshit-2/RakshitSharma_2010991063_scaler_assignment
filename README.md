@@ -1,4 +1,4 @@
-# Cab Services backend
+# Cab Service(Shortest path/time detection)
 
 ## Description
 Welcome to my project! This is a Cab Booking App made with MERN stack. It allows users to quickly and easily book cabs with multiple options and price variations. With this App, users can effortlessly reach their destination with the minimum time and price.
