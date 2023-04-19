@@ -71,3 +71,13 @@ react-router-hash-link: ^2.4.3 | chalk: ^4.1.2
 react-router-dom: ^4.2.2 | mongoose: ^7.0.3
 axios: ^1.3.5 | 
 @mui/material ^5.12.1 |
+
+## Standard
+
+[![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
+
+## BUGs or comments
+
+[Create new Issues](https://github.com/rakshit-2/scaler_assignment.git) (preferred)
+
+Email Me: rakshit4013@gmail.com (welcome, say hi)
