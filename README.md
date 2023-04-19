@@ -20,10 +20,12 @@ dijkstra algorith(Python) is used to calculate the shortest path using the sourc
 
 The user gets notified through the nodemailer email service used in the website, as soon as the user books the cab the detailed mail is sent to the user about the price, timestamp of booking, cab name etc. The driver would also receive the optimized route through their navigation system, ensuring they take the most efficient path to the destination.
 
-No cab should has an overlapping start and end time as the user booked a can he cannot book another cab till the duration of the booked trip is completed.
+No cab should has an overlapping start and end time - as the user booked a cab he/she cannot book another cab till the duration of the booked trip is completed.
 Responsive design web design users can use the  web application on mobile devices also with best user experience.
 
 admin can view all the user's email id, number of cabs they have booked who have booked cab from the website, admin can also view the total number of cabs that have bheen booked by all users its id, what time, email of the user etc.
+
+#### while ReactJs and NodeJs are structured using atomic design model
 
 ## 🚀 Features
 - No Login Required just the EMAIL
