@@ -14,18 +14,17 @@
 
 [Visit Now](http://43.205.95.49/) 🚀
 
-Welcome to my project! This is a Cab Booking App made with MERN stack. It allows users to quickly and easily book cabs with multiple options and price variations. With this App, users can effortlessly reach their destination with the minimum time and price.
+Welcome to my project! This is a Cab Booking App made with MERN stack. It lets users quickly and easily book cabs with multiple options and price variations. With this App, users can effortlessly reach their destination in the minimum time and price.
 
-dijkstra algorith(Python) is used to calculate the shortest path using the source and destination fetched from the user. Once the shortest path has been calculated, the website would display the estimated time and distance of the trip to the user, as well as the price calculated according to teh formula 10rs/min(cab GO). Python file for the Shortest path is called using Child-process(nodejs library)
+dijkstra algorithm (Python) calculates the shortest path using the source and destination fetched from the user. Once the shortest path has been calculated, the website will display the estimated time and distance of the trip to the user, as well as the price calculated according to the formula 10rs/min(cab GO). Python file for the Shortest path is called using Child-process(NodeJs library)
 
-The user gets notified through the nodemailer email service used in the website, as soon as the user books the cab the detailed mail is sent to the user about the price, timestamp of booking, cab name etc. The driver would also receive the optimized route through their navigation system, ensuring they take the most efficient path to the destination.
+The user gets notified through the Nodemailer email service used on the website, as soon as the user books the cab detailed mail is sent to the user about the price, timestamp of booking, cab name, etc. The driver would also receive the optimized route through their navigation system, ensuring they take the most efficient path to the destination.
 
-No cab should has an overlapping start and end time - as the user booked a cab he/she cannot book another cab till the duration of the booked trip is completed.
-Responsive design web design users can use the  web application on mobile devices also with best user experience.
+No cab should have an overlapping start and end time - as the user booked a cab he/she cannot book another cab till the duration of the booked trip is completed. Responsive design web design users can use the web application on mobile devices also with the best user experience.
 
-admin can view all the user's email id, number of cabs they have booked who have booked cab from the website, admin can also view the total number of cabs that have bheen booked by all users its id, what time, email of the user etc.
+Admins can view all the user's email id, the number of cabs they have booked who booked cabs from the website, Admins can also view the total number of cabs that have been booked by all users its id, what time, email of the user, etc.
 
-#### while ReactJs and NodeJs are structured using atomic design model
+#### while ReactJs and NodeJs are structured using an atomic design model
 
 ## 🚀 Features
 - No Login Required just the EMAIL
