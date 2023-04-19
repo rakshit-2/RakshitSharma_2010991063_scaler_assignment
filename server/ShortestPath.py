@@ -3,7 +3,7 @@ import sys
 
 # dijkstra algo function 
 def Dis(arr,s):
-    def finder(dis,vis):
+    def finder(dis,vis):  #finding the minnVer(vertex)
         minn=sys.maxsize
         minnVer=-1
         for i in range(len(dis)):
@@ -15,14 +15,14 @@ def Dis(arr,s):
     count=len(arr)
     vis=[]
     dis=[]
-    for i in range(count):
+    for i in range(count): #finning arrays with false to check afterwords with true
         vis.append(False)
         dis.append(sys.maxsize)
     
     dis[s]=0
     for i in range(count):
         u=finder(dis,vis)
-        vis[u]=True
+        vis[u]=True 
         
         for v in range(count):
             if(not vis[v] and arr[u][v]!=0 and (dis[u]+arr[u][v]<dis[v])):
